@@ -1,0 +1,21 @@
+<ul id="ma-liste">
+  <li><div id="div1">Element 1</div></li>
+  <li><div id="div2">Element 2</div></li>
+  <li><div id="div3">Element 3</div></li>
+</ul>
+<p id="resultat"></p>
+<script>
+  // Sélectionner toutes les divs dans la liste
+  var divs = document.querySelectorAll("#ma-liste div");
+  // Sélectionner le paragraphe où afficher le résultat
+  var resultat = document.getElementById("resultat");
+  // Ajouter un écouteur d'événement click sur chaque div
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].addEventListener("click", function(event) {
+      // Récupérer le texte de la div cliquée
+      var texte = event.target.textContent;
+      // Afficher le texte dans le paragraphe résultat
+      resultat.textContent = texte;
+    });
+  }
+</script>
